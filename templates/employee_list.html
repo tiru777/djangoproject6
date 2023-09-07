@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<table>
+    <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age </th>
+            <th>Email </th>
+            <th>Address</th>
+          </tr>
+  </thead>
+    <tbody>
+        {% for object in query_set %}
+            <tr>
+                 <td> {{object.name | upper}}</td>
+                 <td> {{object.age | add:"2"}}</td>
+                 <td> {{object.email | lower }}</td>
+                  <td>{{object.address | capfirst}}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
